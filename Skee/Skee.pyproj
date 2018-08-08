@@ -21,7 +21,27 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Drawables\TextEntity.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Drawables\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Eventhandlers\KeyPress.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Eventhandlers\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Drawable.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Skee.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Drawables\" />
+    <Folder Include="Interfaces\" />
+    <Folder Include="Eventhandlers\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
