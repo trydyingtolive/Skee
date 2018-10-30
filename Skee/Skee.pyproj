@@ -21,10 +21,19 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Drawables\TextEntity.py">
+    <Compile Include="Drawables\Animation.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Drawables\__init__.py">
+    <Compile Include="Drawables\Drawable.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Elements\RectEntity.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Elements\TextEntity.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Elements\__init__.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Eventhandlers\KeyPress.py">
@@ -33,15 +42,25 @@
     <Compile Include="Eventhandlers\__init__.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Interfaces\Drawable.py">
+    <Compile Include="Drawables\GameScore.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Drawables\__init__.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Skee.py" />
+    <Compile Include="Utilities\GameState.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Utilities\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Drawables\" />
-    <Folder Include="Interfaces\" />
+    <Folder Include="Elements\" />
     <Folder Include="Eventhandlers\" />
+    <Folder Include="Drawables\" />
+    <Folder Include="Utilities\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

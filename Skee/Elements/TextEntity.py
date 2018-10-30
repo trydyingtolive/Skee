@@ -17,7 +17,7 @@ class TextEntity(object):
         myfont = pygame.font.SysFont("Skee", self.FontSize)
         label = myfont.render(self.Text, 1, self.Color)
         w = label.get_rect().width
-        x = ((self.End - self.X)/2)-(w/2)
+        x = (((self.End - self.X)/2)-(w/2)) + self.X
         if self.Shadow:
             shadow = myfont.render(self.Text, 1, self.Shadow)
             self.Screen.blit(shadow, (x+self.ShadowOffset, self.Y+self.ShadowOffset))
