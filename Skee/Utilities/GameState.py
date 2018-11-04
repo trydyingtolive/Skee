@@ -1,4 +1,6 @@
-from Drawables.Animation import *
+from Drawables.DoubleBonus import *
+from Drawables.Bonus import *
+from Drawables.FinalScore import *
 
 class GameState(object):
     PlayerId = 0
@@ -21,8 +23,10 @@ class GameState(object):
         if prevScore < 200 and self.Score >= 200 :
             self.Bonus = True
             self.Balls += 8
-            self.Drawables.append(Animation(self.Screen))
+            self.Drawables.append(Bonus(self))
         if prevScore < 410 and self.Score >= 410:
             self.DoubleBonus = True
             self.Balls += 7
-            self.Drawables.append(Animation(self.Screen))
+            self.Drawables.append(DoubleBonus(self))
+        if self.Balls == 0:
+            self.Drawables.append(FinalScore(self))

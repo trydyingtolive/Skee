@@ -1,12 +1,14 @@
-
+import time
 
 class Drawable(object):
-    Frame = 0
-    IsActive = True
-    Screen = None
+    StartTime = time.time() *1000
+    GameState = None
 
-    def _init_(self, screen):
-        self.Screen = screen
+    def _init_(self, gameState):
+        self.GameState = gameState
 
-    def Draw():
+    def IsActive(self):
+        return True
+
+    def Draw(self):
         pass

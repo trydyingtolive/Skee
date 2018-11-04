@@ -21,9 +21,9 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Drawables\Animation.py">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Drawables\FinalScore.py" />
+    <Compile Include="Drawables\DoubleBonus.py" />
+    <Compile Include="Drawables\Bonus.py" />
     <Compile Include="Drawables\Drawable.py">
       <SubType>Code</SubType>
     </Compile>
@@ -48,7 +48,11 @@
     <Compile Include="Drawables\__init__.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="DrawTool.py" />
     <Compile Include="Skee.py" />
+    <Compile Include="Utilities\GameColors.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Utilities\GameState.py">
       <SubType>Code</SubType>
     </Compile>

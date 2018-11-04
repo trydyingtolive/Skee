@@ -24,9 +24,9 @@ def setup():
     screen = pygame.display.set_mode((1920,1080))
     global gameState
     gameState = GameState(screen)
-    ##pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
+    pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
     global gameScore
-    gameScore = GameScore(screen)
+    gameScore = GameScore(gameState)
     gameState.Drawables.append(gameScore)
     
     keyboardEvents.append(KeyPress(pygame.K_1, addTen))
@@ -75,13 +75,9 @@ def HandleKeyEvent(key):
 
 def UpdateDisplay():
      screen.fill((48,51,46))
-
-     for drawable in gameState.Drawables:
-         drawable.Frame +=1
-
-     while(True):
-         if (gameState.Drawables[-1].IsActive):
-             gameState.Drawables[-1].Draw(gameState)
+     while(len(gameState.Drawables) > 0):
+         if (gameState.Drawables[-1].IsActive()):
+             gameState.Drawables[-1].Draw()
              break
          else: 
             gameState.Drawables.pop()
