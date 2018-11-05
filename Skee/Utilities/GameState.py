@@ -17,16 +17,17 @@ class GameState(object):
 
 
     def AddScore(self, points):
-        prevScore = self.Score
-        self.Score += points
-        self.Balls += -1
-        if prevScore < 200 and self.Score >= 200 :
-            self.Bonus = True
-            self.Balls += 8
-            self.Drawables.append(Bonus(self))
-        if prevScore < 410 and self.Score >= 410:
-            self.DoubleBonus = True
-            self.Balls += 7
-            self.Drawables.append(DoubleBonus(self))
-        if self.Balls == 0:
-            self.Drawables.append(FinalScore(self))
+        if (self.Balls > 0):
+            prevScore = self.Score
+            self.Score += points
+            self.Balls += -1
+            if prevScore < 200 and self.Score >= 200 :
+                self.Bonus = True
+                self.Balls += 8
+                self.Drawables.append(Bonus(self))
+            if prevScore < 410 and self.Score >= 410:
+                self.DoubleBonus = True
+                self.Balls += 7
+                self.Drawables.append(DoubleBonus(self))
+            if self.Balls == 0:
+                self.Drawables.append(FinalScore(self))
